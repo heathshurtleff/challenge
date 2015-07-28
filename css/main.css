@@ -1,0 +1,6 @@
+.picture-display {
+    padding-bottom: 15px;
+}
+.picture-display .picture-img img {
+    width: 100%;
+}

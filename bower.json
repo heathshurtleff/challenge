@@ -1,0 +1,13 @@
+{
+  "name": "ibm-challenge",
+  "version": "0.0.0",
+  "authors": [
+    "Heath Shurtleff <heath.shurtleff@overstock.com>"
+  ],
+  "description": "This is the code challenge presented by IBM",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "angular": "~1.4.3"
+  }
+}

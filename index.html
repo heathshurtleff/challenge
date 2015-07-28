@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>IBM Code Challenge</title>
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body ng-app="ibm" ng-controller="MainController">
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-brand">IBM Challenge</div>
+            <div class="navbar-right navbar-form">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search" ng-model="imgSearch"/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="appContainer" class="container">
+        <div class="col-sm-3">
+            <h4>Sorting Options</h4>
+            <ul class="list-group">
+                <li ng-click="selectSort('')" class="list-group-item">Default Order</li>
+                <li ng-click="selectSort('title')" class="list-group-item">A - Z</li>
+                <li ng-click="selectSort('-title')" class="list-group-item">Z - A</li>
+            </ul>
+        </div>
+        <div class="col-sm-9">
+            <h4>Photo Gallery</h4>
+            <div ng-repeat="picture in pictures | orderBy:sortVal | filter:imgSearch">
+                <div class="picture-display row">
+                    <div class="col-sm-6 picture-img">
+                        <img ng-src="https://farm{{picture.farm-id}}.staticflickr.com/{{picture.server-id}}/{{picture.id}}_{{picture.secret}}.jpg" alt=""/>
+                    </div>
+                    <div class="col-sm-6">
+                        <h5>{{picture.title}}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="vendor/jquery/dist/jquery.min.js"></script>
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
